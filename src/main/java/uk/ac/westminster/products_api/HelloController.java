@@ -1,7 +1,7 @@
 package uk.ac.westminster.products_api;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+import java.time.LocalDate;
 @RestController
 public class HelloController {
 
@@ -22,4 +22,8 @@ public class HelloController {
         public String goodbye(){
             return "Goodbye from Spring Boot";
         }
+    @GetMapping("/status")
+        public String status(){
+        return "Application is running,Date:"+LocalDate.now();
+    }
     }
